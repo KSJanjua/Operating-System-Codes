@@ -132,7 +132,6 @@ int main()
     }
 
     processes temp_pro;
-    //This is the code of FCFS with different arrival time
 
     temp_pro.sort_processes(proc_arr,num_pro);
     temp_pro.calculate_values(proc_arr,num_pro);
