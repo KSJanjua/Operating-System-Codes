@@ -1,3 +1,5 @@
+// Code of FCFS with different arrival time
+
 #include<iostream>
 #include<iomanip>
 using namespace std;
