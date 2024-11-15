@@ -42,9 +42,7 @@ class processes
                     if (proc_arr[j].arrival_time>proc_arr[j+1].arrival_time)
                     {
                         flag=false;
-                        swap(proc_arr[j].process_id,proc_arr[j+1].process_id);
-                        swap(proc_arr[j].arrival_time,proc_arr[j+1].arrival_time);
-                        swap(proc_arr[j].burst_time,proc_arr[j+1].burst_time);
+                        swap(proc_arr[j],proc_arr[j+1]);
                     }
                 }
                 if (flag==true)
@@ -62,12 +60,7 @@ class processes
                     if (proc_arr[j].process_id>proc_arr[j+1].process_id)
                     {
                         flag=false;
-                        swap(proc_arr[j].process_id,proc_arr[j+1].process_id);
-                        swap(proc_arr[j].arrival_time,proc_arr[j+1].arrival_time);
-                        swap(proc_arr[j].burst_time,proc_arr[j+1].burst_time);
-                        swap(proc_arr[j].turnaround_time,proc_arr[j+1].turnaround_time);
-                        swap(proc_arr[j].completion_time,proc_arr[j+1].completion_time);
-                        swap(proc_arr[j].waiting_time,proc_arr[j+1].waiting_time);
+                        swap(proc_arr[j], proc_arr[j+1]);
                     }
                 }
                 if (flag==true)

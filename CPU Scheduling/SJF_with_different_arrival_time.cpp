@@ -42,16 +42,12 @@ class processes
                     if (proc_arr[j].arrival_time>proc_arr[j+1].arrival_time)
                     {
                         flag=false;
-                        swap(proc_arr[j].process_id,proc_arr[j+1].process_id);
-                        swap(proc_arr[j].arrival_time,proc_arr[j+1].arrival_time);
-                        swap(proc_arr[j].burst_time,proc_arr[j+1].burst_time);
+                        swap(proc_arr[j],proc_arr[j+1]);
                     }
                     else if (proc_arr[j].arrival_time==proc_arr[j+1].arrival_time && proc_arr[j].burst_time>proc_arr[j+1].burst_time)
                     {
                         flag=false;
-                        swap(proc_arr[j].process_id,proc_arr[j+1].process_id);
-                        swap(proc_arr[j].arrival_time,proc_arr[j+1].arrival_time);
-                        swap(proc_arr[j].burst_time,proc_arr[j+1].burst_time);
+                        swap(proc_arr[j],proc_arr[j+1]);
                     }
                 }
                 if (flag==true)
@@ -69,12 +65,7 @@ class processes
                     if (proc_arr[j].process_id>proc_arr[j+1].process_id)
                     {
                         flag=false;
-                        swap(proc_arr[j].process_id,proc_arr[j+1].process_id);
-                        swap(proc_arr[j].arrival_time,proc_arr[j+1].arrival_time);
-                        swap(proc_arr[j].burst_time,proc_arr[j+1].burst_time);
-                        swap(proc_arr[j].turnaround_time,proc_arr[j+1].turnaround_time);
-                        swap(proc_arr[j].completion_time,proc_arr[j+1].completion_time);
-                        swap(proc_arr[j].waiting_time,proc_arr[j+1].waiting_time);
+                        swap(proc_arr[j],proc_arr[j+1]);
                     }
                 }
                 if (flag==true)
@@ -97,15 +88,14 @@ class processes
                 
                 if (min!=i)
                 {
-                    swap(proc_arr[i].process_id,proc_arr[min].process_id);
-                    swap(proc_arr[i].arrival_time,proc_arr[min].arrival_time);
-                    swap(proc_arr[i].burst_time,proc_arr[min].burst_time);
+                    swap(proc_arr[i],proc_arr[min]);
                 }
                 
                 time += proc_arr[i].burst_time;
                 proc_arr[i].completion_time = time;
                 proc_arr[i].turnaround_time = proc_arr[i].completion_time - proc_arr[i].arrival_time;
                 proc_arr[i].waiting_time = proc_arr[i].turnaround_time - proc_arr[i].burst_time;
+                
                 if (i<num_pro-1 && proc_arr[i+1].arrival_time>time)
                 {
                     time += (proc_arr[i+1].arrival_time-time);
