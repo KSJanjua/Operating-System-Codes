@@ -50,7 +50,7 @@ class processes
                         swap(proc_arr[j],proc_arr[j+1]);
                         flag=false;
                     }
-                    else if(proc_arr[j].process_id==proc_arr[j+1].process_id && proc_arr[j].priority>proc_arr[j+1].priority)
+                    else if(proc_arr[j].arrival_time==proc_arr[j+1].arrival_time && proc_arr[j].priority>proc_arr[j+1].priority)
                     {
                         swap(proc_arr[j],proc_arr[j+1]);
                         flag=false;
