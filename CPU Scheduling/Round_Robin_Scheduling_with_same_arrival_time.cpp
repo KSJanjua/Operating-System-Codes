@@ -41,7 +41,7 @@ class processes
             {
                 remaining_time[i]=proc_arr[i].burst_time;
                 q.push(i);
-                proc_arr[0].in_queue=true;
+                proc_arr[i].in_queue=true;
             }
                 
 
